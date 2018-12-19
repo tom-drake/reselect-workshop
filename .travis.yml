@@ -1,0 +1,20 @@
+env:
+  - PUBLIC_URL=/reselect-workshop/
+
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: pages
+  local-dir: ./build
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+on:
+  branch: master
