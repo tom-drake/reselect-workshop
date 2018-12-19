@@ -34,14 +34,14 @@ const Reselect = ({ classes }) => {
       </Typography>
       <Typography variant="h4">Reselect Example</Typography>
       <PrismCode component="pre" className="language-jsx">
-        {`import { createSelector } from 'reselect'
+        {`import { createSelector } from 'reselect';
 
-const shopItemsSelector = state => state.shop.items
+const shopItemsSelector = state => state.shop.items;
 
 const subtotalSelector = createSelector(
   shopItemsSelector,
   items => items.reduce((acc, item) => acc + item.value, 0)
-)
+);
 
 const data = {
   shop: {
@@ -50,7 +50,7 @@ const data = {
       { name: 'Cheese', value: 300 }
     ]
   }
-}
+};
 
 const subtotal = subtotalSelector(data);
 `}

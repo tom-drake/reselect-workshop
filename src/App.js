@@ -8,6 +8,7 @@ import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 
 import Reselect from "./pages/Reselect";
+import Generators from "./pages/Generators";
 
 const baseUrl = process.env.PUBLIC_URL;
 
@@ -22,6 +23,12 @@ const App = ({ classes, location }) => {
             component={Link}
             to={`${baseUrl}/reselect`}
           />
+          <Tab
+            label="Selector generators"
+            value={`${baseUrl}/generators`}
+            component={Link}
+            to={`${baseUrl}/generators`}
+          />
         </Tabs>
       </AppBar>
       <Grid container justify="center">
@@ -32,6 +39,7 @@ const App = ({ classes, location }) => {
             render={() => <Redirect to={`${baseUrl}/reselect`} />}
           />
           <Route exact path={`${baseUrl}/reselect`} component={Reselect} />
+          <Route exact path={`${baseUrl}/generators`} component={Generators} />
         </Switch>
       </Grid>
     </Fragment>
